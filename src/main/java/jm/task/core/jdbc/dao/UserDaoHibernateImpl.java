@@ -1,6 +1,5 @@
 package jm.task.core.jdbc.dao;
 
-import com.mysql.cj.log.Log;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.HibernateUtil;
 import org.hibernate.Session;
@@ -18,7 +17,7 @@ public class UserDaoHibernateImpl implements UserDao {
     private final SessionFactory factory = HibernateUtil.getSessionFactory();
 
     private final static UserDao INSTANCE;
-    Logger LOGGER = Logger.getLogger("DAO Logger");
+    private static Logger LOGGER = Logger.getLogger("DAO Logger");
 
     private static final String CREATE_TABLE_SQL = """
             CREATE TABLE dbtest.users (
