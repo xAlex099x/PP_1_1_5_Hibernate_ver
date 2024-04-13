@@ -17,7 +17,7 @@ public class UserDaoHibernateImpl implements UserDao {
     private final SessionFactory factory = HibernateUtil.getSessionFactory();
 
     private final static UserDao INSTANCE;
-    private static Logger LOGGER = Logger.getLogger("DAO Logger");
+    private final Logger LOGGER = Logger.getLogger("DAO Logger");
 
     private static final String CREATE_TABLE_SQL = """
             CREATE TABLE dbtest.users (
