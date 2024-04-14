@@ -15,8 +15,7 @@ import java.util.logging.Logger;
 public class UserDaoHibernateImpl implements UserDao {
 
     private final SessionFactory factory = HibernateUtil.getSessionFactory();
-
-    private final static UserDao INSTANCE;
+    private final static UserDao INSTANCE = new UserDaoHibernateImpl();
     private final Logger LOGGER = Logger.getLogger("DAO Logger");
 
     private static final String CREATE_TABLE_SQL = """
@@ -38,10 +37,6 @@ public class UserDaoHibernateImpl implements UserDao {
 
     public UserDaoHibernateImpl() {
 
-    }
-
-    static {
-        INSTANCE = new UserDaoHibernateImpl();
     }
 
     public static UserDao getInstance(){
